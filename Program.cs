@@ -4,35 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//iterative ve recursive fonksiyonlarla faktöriyel hesaplama
+// ÜS ALMA FONKSİYONU 
 
-namespace ProgLab_01
+namespace ProgLab_02
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-
-            Console.Write("Hesaplanmasını istediğiniz faktöriyel:");
-            int n=Convert.ToInt32(Console.ReadLine());//n>=0
-            Console.WriteLine(n +" sayısının faktöriyeli ite= "+fak_ite(n));
-            Console.WriteLine(n + " sayısının faktöriyeli rec= " + fak_rec(n));
-            Console.ReadLine(); 
+            Console.WriteLine("üs alınacak sayıyı giriniz");
+            int a=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("üssünü giriniz");
+            int b=Convert.ToInt32(Console.ReadLine());  
+            Console.WriteLine(a + "üssü"+ b + "= " + us_alma(a,b));
+            Console.ReadLine();
         }
-        static int fak_ite(int n)
+        static int us_alma(int a , int b)
         {
-            int f = 1;
-            for (int i = 1; i <= n; i++)
-            {
-                f = f * i;
+            int sonuc = 1;
+            if (a == 0 | b == 0)
+                Console.WriteLine("Sonuç belirsiz");
+            else if (b == 0)
+                Console.WriteLine("Sonuç 1");
+            for (int i = 1;i <= b; i++) {
+                sonuc = sonuc * a;
             }
-            return f;
-        }
-
-        static int fak_rec(int n)
-        {
-            if (n == 0) return 1;
-            else return n * fak_rec(n - 1);
+            return sonuc;
         }
     }
 }
